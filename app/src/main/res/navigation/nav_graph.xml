@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.baguioguide.MainFragment"
+        android:label="Baguio Guide"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_main_to_culturalAttractions"
+            app:destination="@id/culturalAttractionsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_to_outdoorActivities"
+            app:destination="@id/outdoorActivitiesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_to_diningOptions"
+            app:destination="@id/diningOptionsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_to_shoppingExperiences"
+            app:destination="@id/shoppingExperiencesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/culturalAttractionsFragment"
+        android:name="com.example.baguioguide.CulturalAttractionsFragment"
+        android:label="Cultural Attractions"
+        tools:layout="@layout/fragment_category_list">
+        <action
+            android:id="@+id/action_culturalAttractions_to_detail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/outdoorActivitiesFragment"
+        android:name="com.example.baguioguide.OutdoorActivitiesFragment"
+        android:label="Outdoor Activities"
+        tools:layout="@layout/fragment_category_list">
+        <action
+            android:id="@+id/action_outdoorActivities_to_detail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/diningOptionsFragment"
+        android:name="com.example.baguioguide.DiningOptionsFragment"
+        android:label="Dining Options"
+        tools:layout="@layout/fragment_category_list">
+        <action
+            android:id="@+id/action_diningOptions_to_detail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shoppingExperiencesFragment"
+        android:name="com.example.baguioguide.ShoppingExperiencesFragment"
+        android:label="Shopping Experiences"
+        tools:layout="@layout/fragment_category_list">
+        <action
+            android:id="@+id/action_shoppingExperiences_to_detail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.baguioguide.DetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="item"
+            app:argType="com.example.baguioguide.Item" />
+    </fragment>
+</navigation>

@@ -18,14 +18,17 @@ class CulturalAttractionsFragment : Fragment() {
     private var isTwoPane: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_category_list, container, false)
+        val view = if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE &&
+                      resources.configuration.screenWidthDp >= 600) {
+            inflater.inflate(R.layout.fragment_category_list_twopane, container, false)
+        } else {
+            inflater.inflate(R.layout.fragment_category_list, container, false)
+        }
 
         val recyclerView: RecyclerView = view.findViewById(R.id.itemRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        // Check if we're in two-pane mode (tablet landscape)
-        isTwoPane = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE &&
-                    resources.configuration.screenWidthDp >= 600
+        isTwoPane = view.findViewById<View?>(R.id.detail_container) != null
 
         attractionAdapter = AttractionAdapter(emptyList()) { attraction ->
             if (isTwoPane) {
@@ -49,9 +52,11 @@ class CulturalAttractionsFragment : Fragment() {
     }
 
     private fun showDetailFragment(attraction: Attraction) {
-        val detailFragment = DetailFragment.newInstance(attraction)
-        childFragmentManager.beginTransaction()
-            .replace(R.id.detail_container, detailFragment)
-            .commit()
+        view?.findViewById<View>(R.id.detail_container)?.let {
+            val detailFragment = DetailFragment.newInstance(attraction)
+            childFragmentManager.beginTransaction()
+                .replace(R.id.detail_container, detailFragment)
+                .commit()
+        }
     }
 }

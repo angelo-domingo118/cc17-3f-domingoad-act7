@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.content.res.Configuration
 
 class ShoppingExperiencesFragment : Fragment() {
 
@@ -17,12 +18,17 @@ class ShoppingExperiencesFragment : Fragment() {
     private var isTwoPane: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_category_list, container, false)
+        val view = if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE &&
+                      resources.configuration.screenWidthDp >= 600) {
+            inflater.inflate(R.layout.fragment_category_list_twopane, container, false)
+        } else {
+            inflater.inflate(R.layout.fragment_category_list, container, false)
+        }
 
         val recyclerView: RecyclerView = view.findViewById(R.id.itemRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        isTwoPane = view.findViewById<View>(R.id.detail_container) != null
+        isTwoPane = view.findViewById<View?>(R.id.detail_container) != null
 
         shoppingAdapter = ShoppingAdapter(emptyList()) { shopping ->
             if (isTwoPane) {
@@ -46,9 +52,11 @@ class ShoppingExperiencesFragment : Fragment() {
     }
 
     private fun showDetailFragment(shopping: Shopping) {
-        val detailFragment = DetailFragment.newInstance(shopping)
-        childFragmentManager.beginTransaction()
-            .replace(R.id.detail_container, detailFragment)
-            .commit()
+        view?.findViewById<View>(R.id.detail_container)?.let {
+            val detailFragment = DetailFragment.newInstance(shopping)
+            childFragmentManager.beginTransaction()
+                .replace(R.id.detail_container, detailFragment)
+                .commit()
+        }
     }
 }

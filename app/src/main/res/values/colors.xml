@@ -25,34 +25,34 @@
     <color name="md_theme_light_onBackground">#1B1C18</color>
     <color name="md_theme_light_surface">#F1F8E9</color>
     <color name="md_theme_light_onSurface">#1B1C18</color>
+    <color name="md_theme_light_toolbar">#A5D6A7</color>
 
-    <!-- Dark Theme -->
-    <color name="md_theme_dark_primary">#81C784</color>
-    <color name="md_theme_dark_onPrimary">#00390B</color>
-    <color name="md_theme_dark_primaryContainer">#005317</color>
-    <color name="md_theme_dark_onPrimaryContainer">#B8F5B1</color>
+    <!-- Dark Theme - Updated for better readability -->
+    <color name="md_theme_dark_primary">#90CAF9</color>          <!-- Lighter blue for better visibility -->
+    <color name="md_theme_dark_onPrimary">#003258</color>        <!-- Dark blue for contrast -->
+    <color name="md_theme_dark_primaryContainer">#004881</color>  <!-- Mid-dark blue for containers -->
+    <color name="md_theme_dark_onPrimaryContainer">#D1E4FF</color><!-- Light blue for text on containers -->
     
-    <color name="md_theme_dark_secondary">#D7CCC8</color>
-    <color name="md_theme_dark_onSecondary">#3E2723</color>
-    <color name="md_theme_dark_secondaryContainer">#5D4037</color>
-    <color name="md_theme_dark_onSecondaryContainer">#EFEBE9</color>
+    <color name="md_theme_dark_secondary">#FFB74D</color>        <!-- Warm orange for accents -->
+    <color name="md_theme_dark_onSecondary">#452B00</color>      <!-- Dark brown for contrast -->
+    <color name="md_theme_dark_secondaryContainer">#633F00</color><!-- Darker orange-brown -->
+    <color name="md_theme_dark_onSecondaryContainer">#FFDDB4</color><!-- Light orange for text -->
     
-    <color name="md_theme_dark_tertiary">#81D4FA</color>
-    <color name="md_theme_dark_onTertiary">#003B57</color>
-    <color name="md_theme_dark_tertiaryContainer">#004D6E</color>
-    <color name="md_theme_dark_onTertiaryContainer">#C3E8FF</color>
+    <color name="md_theme_dark_tertiary">#A5D6A7</color>         <!-- Soft green -->
+    <color name="md_theme_dark_onTertiary">#003915</color>       <!-- Dark green -->
+    <color name="md_theme_dark_tertiaryContainer">#00531F</color><!-- Mid-dark green -->
+    <color name="md_theme_dark_onTertiaryContainer">#B8F5B1</color><!-- Light green -->
     
-    <color name="md_theme_dark_error">#CF6679</color>
-    <color name="md_theme_dark_errorContainer">#93000A</color>
-    <color name="md_theme_dark_onError">#000000</color>
-    <color name="md_theme_dark_onErrorContainer">#FFDAD6</color>
+    <color name="md_theme_dark_error">#FFB4AB</color>            <!-- Lighter red for errors -->
+    <color name="md_theme_dark_errorContainer">#93000A</color>   <!-- Dark red container -->
+    <color name="md_theme_dark_onError">#690005</color>          <!-- Very dark red -->
+    <color name="md_theme_dark_onErrorContainer">#FFDAD6</color> <!-- Light pink -->
     
-    <color name="md_theme_dark_background">#1B1C18</color>
-    <color name="md_theme_dark_onBackground">#E3E3DC</color>
-    <color name="md_theme_dark_surface">#1E231D</color>
-    <color name="md_theme_dark_onSurface">#C6C8C2</color>
-
-    <!-- New lighter green color for toolbar -->
-    <color name="md_theme_light_toolbar">#4CAF50</color>
-    <color name="md_theme_dark_toolbar">#81C784</color>
+    <color name="md_theme_dark_background">#1A1C1E</color>       <!-- Slightly warm dark background -->
+    <color name="md_theme_dark_onBackground">#E3E2E6</color>     <!-- Off-white text -->
+    <color name="md_theme_dark_surface">#1A1C1E</color>          <!-- Same as background -->
+    <color name="md_theme_dark_onSurface">#E3E2E6</color>        <!-- Off-white text -->
+    
+    <!-- Updated toolbar colors for dark theme -->
+    <color name="md_theme_dark_toolbar">#90CAF9</color>          <!-- Matching primary -->
 </resources>
